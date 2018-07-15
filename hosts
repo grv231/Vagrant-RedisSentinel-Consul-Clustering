@@ -1,0 +1,8 @@
+[redis-master]
+redismaster
+
+[redis-slave]
+redisslave0[1:2]
+
+[redis-sentinel]
+redissentinel0[1:2] redis_sentinel=True
