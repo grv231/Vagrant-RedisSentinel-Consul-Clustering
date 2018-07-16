@@ -11,11 +11,11 @@ Following softwares and tools needs to be setup before proceeding with the proje
 
 1. **Vagrant** needs to be installed. For vagrant installation on specific machines, look below:
  - [Debian](http://www.codebind.com/linux-tutorials/install-vagrant-ubuntu-16-04/) Installation
- - [Mac OS](http://sourabhbajaj.com/mac-setup/Vagrant/README.html) Installation
+ - [MacOS](http://sourabhbajaj.com/mac-setup/Vagrant/README.html) Installation
 
 2. **Ansible** installation needs to be completed before using the project. For Ansible installation on specific machines, look below:
  - [Debian](https://www.techrepublic.com/article/how-to-install-ansible-on-ubuntu/) distributions
- - [Mac OS](https://hvops.com/articles/ansible-mac-osx/) operating system
+ - [MacOS](https://hvops.com/articles/ansible-mac-osx/) operating system
  
 3. **Git** installation for cloning the project.
 - [Debian](https://www.liquidweb.com/kb/install-git-ubuntu-16-04-lts/) operating systems
@@ -77,7 +77,6 @@ vagrant ssh redissentinel01 -c ‘/vagrant/TestScripts/SentinelSmoketest.sh; /bi
 ```
 consul monitor
 ```
-
 **Healthcheck**
 ![alt text](https://github.com/grv231/Vagrant-RedisSentinel-Consul-Clustering/blob/master/Images/HealthCheck.png "Healthcheck")
 
@@ -98,4 +97,20 @@ redis_sentinel_monitors:
     notification_script: false
     client_reconfig_script: false
 ```
+## Architecture Diagram
+
+![alt text](https://github.com/grv231/Vagrant-RedisSentinel-Consul-Clustering/blob/master/Images/RedisConsulTest.png "RedisConsulSmokeTest")
+
+## Built With
+
+* [Vagrant](https://www.vagrantup.com/docs/) - Managing virtual machines
+* [Vagrant Hostmanager](https://github.com/devopsgroup-io/vagrant-hostmanager) - Managing multiple machine environment
+* [Ansible](https://docs.ansible.com/) - Provisioning redis and redis-sentinel on servers
+* [Redis](https://redis.io/documentation) - Redis server (Master-Slave setup)
+* [Redis Sentinel](https://redis.io/topics/sentinel) - Sentinel for monitoring Master-Slaves Redis cluster
+* [Consul](https://www.consul.io/docs/index.html) - Consul for service discovery in a cluster setup
+* [Ruby](http://tutorials.jumpstartlab.com/topics/vagrant_setup.html) - Ruby for vagrant setup
+
+
+
 
