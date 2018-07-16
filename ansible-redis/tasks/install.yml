@@ -115,3 +115,12 @@
   args:
     chdir: /usr/local/src/redis-{{ redis_version }}
     creates: "{{ redis_install_dir }}/bin/redis-server"
+
+# Installing redis tools for redis-cli commands    
+- name: install redis tools
+  become: yes
+  apt:
+    name: redis-tools
+    update_cache: yes
+    cache_valid_time: 86400
+    state: present
