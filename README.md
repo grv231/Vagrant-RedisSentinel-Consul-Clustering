@@ -58,7 +58,7 @@ vagrant ssh redismaster -c ‘/vagrant/TestScripts/RedisConsulSmokeTest.sh; /bin
 ```
 **Test Output**
 
-![alt text](https://github.com/grv231/Vagrant-RedisSentinel-Consul-Clustering/blob/master/Images/SetupCompletion.png "ProjectSetupCompletion")
+![alt text](https://github.com/grv231/Vagrant-RedisSentinel-Consul-Clustering/blob/master/Images/RedisConsulTest.png "RedisConsulSmokeTest")
 
 
 2. **SentinelSmoketest.sh**
@@ -68,5 +68,6 @@ vagrant ssh redismaster -c ‘/vagrant/TestScripts/RedisConsulSmokeTest.sh; /bin
 ```
 vagrant ssh redissentinel01 -c ‘/vagrant/TestScripts/SentinelSmoketest.sh; /bin/bash’
 ```
-
+**Test Output**
+![alt text](https://github.com/grv231/Vagrant-RedisSentinel-Consul-Clustering/blob/master/Images/RedisSentinelTest.png "RedisSentinelSmokeTest")
 
