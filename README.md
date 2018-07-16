@@ -99,7 +99,7 @@ redis_sentinel_monitors:
 ```
 ## Architecture Diagram
 
-![alt text](https://github.com/grv231/Vagrant-RedisSentinel-Consul-Clustering/blob/master/Images/RedisConsulTest.png "RedisConsulSmokeTest")
+![alt text](https://github.com/grv231/Vagrant-RedisSentinel-Consul-Clustering/blob/master/Images/Arch_RedisConsul.jpg "Design")
 
 ## Built With
 
