@@ -57,7 +57,6 @@ Navigate to the folder **TestScripts** for running the tests. There are two scri
 vagrant ssh redismaster -c ‘/vagrant/TestScripts/RedisConsulSmokeTest.sh; /bin/bash’
 ```
 **Test Output**
-
 ![alt text](https://github.com/grv231/Vagrant-RedisSentinel-Consul-Clustering/blob/master/Images/RedisConsulTest.png "RedisConsulSmokeTest")
 
 
@@ -70,4 +69,33 @@ vagrant ssh redissentinel01 -c ‘/vagrant/TestScripts/SentinelSmoketest.sh; /bi
 ```
 **Test Output**
 ![alt text](https://github.com/grv231/Vagrant-RedisSentinel-Consul-Clustering/blob/master/Images/RedisSentinelTest.png "RedisSentinelSmokeTest")
+
+3. **Healthcheck for Redis service using Consul**
+   Healthcheck information has been configured in the **consulmasterscript.sh** and **consulslavescript.sh**. This healthcheck gives the    information about Redis service running on port 6379. If the service is on, consul shows **service sync** successful.
+   
+   The information can be gathered by running the following command on any node (Master or Slave):
+```
+consul monitor
+```
+
+**Healthcheck**
+![alt text](https://github.com/grv231/Vagrant-RedisSentinel-Consul-Clustering/blob/master/Images/RedisSentinelTest.png "RedisSentinelSmokeTest")
+
+## Important Information
+ - Cluster can be resized by adding/removing nodes in the *Vagrantfile* **BOXES** variable.
+ - Additionally, add the master,slave,sentinel nodes in the **hosts** file for correct *Ansible* provisioning
+ - Quorum can be increased/decresed for Sentinel Clusters using the file *ansible-redis/defaults/main.yml*. Values can be                  increased/decresed in this file.
+```yaml
+redis_sentinel_monitors:
+  - name: master01
+    host: localhost
+    port: 6379
+    quorum: 2
+    auth_pass: ant1r3z
+    down_after_milliseconds: 30000
+    parallel_syncs: 1
+    failover_timeout: 180000
+    notification_script: false
+    client_reconfig_script: false
+```
 
