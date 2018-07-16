@@ -42,7 +42,8 @@ vagrant up
 ```
 5. The vagrantfile will take time to provision, sit back and check the messages to see the status of the project cluster setup.
 <br>
-<br>
 
-Project Successful completion should look like this:
+**Project Successful completion** should look like this:
 ![alt text](https://github.com/grv231/Vagrant-RedisSentinel-Consul-Clustering/blob/master/Images/SetupCompletion.png "ProjectSetupCompletion")
+<br>
+## Running the tests
