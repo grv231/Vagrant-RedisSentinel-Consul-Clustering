@@ -1,5 +1,6 @@
 #/bin/bash
-sudo apt-get update
+
+#Install redis tools if not present
 sudo apt-get install -y redis-tools
 
 # Testing the Redis-Sentinel cluster
