@@ -49,9 +49,9 @@ vagrant up
 Navigate to the folder **TestScripts** for running the tests. There are two scripts in the folder namely:
 
 1. **RedisConsulSmokeTest.sh**
-This file is used for running smoke tests on Redis (redismaster and Slaves) and Consul Clusters. In the script, it has been specifically written for the server *redismaster*. It can be used for running on the slaves as well, however, the server names and commands would need to be changed accordingly.
+   This file is used for running smoke tests on Redis (redismaster and Slaves) and Consul Clusters. In the script, it has been              specifically written for the server *redismaster*. It can be used for running on the slaves as well, however, the server names and      commands would need to be changed accordingly.
 
-Make sure that you are not logged into any servers provisioned (redismaster, slaves or sentinel) before running the script. The script needs to be run where the *Vagrantfile* is present from CLI. Run the following command:
+   Make sure that you are not logged into any servers provisioned (redismaster, slaves or sentinel) before running the script. The          script needs to be run where the *Vagrantfile* is present from CLI. Run the following command:
 ```
 vagrant ssh redismaster -c ‘/vagrant/TestScripts/RedisConsulSmokeTest.sh; /bin/bash’
 ```
