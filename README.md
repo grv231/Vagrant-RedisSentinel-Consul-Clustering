@@ -79,7 +79,7 @@ consul monitor
 ```
 
 **Healthcheck**
-![alt text](https://github.com/grv231/Vagrant-RedisSentinel-Consul-Clustering/blob/master/Images/RedisSentinelTest.png "RedisSentinelSmokeTest")
+![alt text](https://github.com/grv231/Vagrant-RedisSentinel-Consul-Clustering/blob/master/Images/HealthCheck.png "Healthcheck")
 
 ## Important Information
  - Cluster can be resized by adding/removing nodes in the *Vagrantfile* **BOXES** variable.
