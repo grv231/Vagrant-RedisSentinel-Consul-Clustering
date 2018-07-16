@@ -22,24 +22,24 @@ Following softwares and tools needs to be setup before proceeding with the proje
 - Mac OS has in-built git installation. 
 
 ### Project Setup
-After checking/setting up the prerequisites, we setup the project by following the steps below:
+After checking/setting up the prerequisites, we setup the project by following the steps below in the *same order*:
 
- - **Vagrant HostManager Plugin** needs to be installed prior to running the *Vagrantfile*. This can be setup using:
- ```
- vagrant plugin install vagrant-hostmanager
- ```
- - After hostmanager plugin, *clone* the git repository using the following command in CLI:
- ```
- git clone https://github.com/grv231/Vagrant-RedisSentinel-Consul-Clustering.git
- ```
- - Once the repository has been cloned and hostmanager plugin setup, change the directory to folder containing files that were cloned
- ```
- cd ~/ Vagrant-RedisSentinel-Consul-Clustering
- ```
- - Now we just need to provision the servers using *Vagrantfile*. Run the following command in the same directory from CLI where the Vagrantfile is present.
- ```
- vagrant up
- ```
- - Since there is a lot of provisioning to be done, sit back and check the messages regularly to see the status of the project cluster setup.
+1. **Vagrant HostManager Plugin** needs to be installed prior to running the *Vagrantfile*. This can be setup using:
+```
+vagrant plugin install vagrant-hostmanager
+```
+2. After hostmanager plugin, *clone* the git repository using the following command in CLI:
+```
+git clone https://github.com/grv231/Vagrant-RedisSentinel-Consul-Clustering.git
+```
+3. Once the repository has been cloned and hostmanager plugin setup, change the directory to folder containing files that were cloned
+```
+cd ~/ Vagrant-RedisSentinel-Consul-Clustering
+```
+4. Now we just need to provision the servers using *Vagrantfile*. Run the command in the same directory from CLI where the Vagrantfile is present.
+```
+vagrant up
+```
+5. The vagrantfile will take time to provision, sit back and check the messages to see the status of the project cluster setup.
  
  
