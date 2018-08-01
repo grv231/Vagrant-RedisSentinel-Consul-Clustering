@@ -1,0 +1,28 @@
+---
+- name: configure the master redis server
+  hosts: redis-master
+  remote_user: vagrant
+  become: yes
+  roles:
+    - ansible-redis
+
+- name: configure redis slaves
+  hosts: redis-slave
+  remote_user: vagrant
+  become: yes
+  vars:
+    - redis_slaveof: redismaster 6379
+  roles:
+    - ansible-redis
+
+- name: configure redis sentinel nodes
+  hosts: redis-sentinel
+  remote_user: vagrant
+  become: yes
+  vars:
+    - redis_sentinel_monitors:
+      - name: master01
+        host: redismaster
+        port: 6379
+  roles:
+    - ansible-redis
