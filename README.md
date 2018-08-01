@@ -71,9 +71,22 @@ vagrant ssh redissentinel01 -c ‘/vagrant/TestScripts/SentinelSmoketest.sh; /bi
 ![alt text](https://github.com/grv231/Vagrant-RedisSentinel-Consul-Clustering/blob/master/Images/RedisSentinelTest.png "RedisSentinelSmokeTest")
 
 3. **Healthcheck for Redis service using Consul**
-   Healthcheck information has been configured in the **consulmasterscript.sh** and **consulslavescript.sh**. This healthcheck gives the    information about Redis service running on port 6379. If the service is on, consul shows **service sync** successful.
+   Healthcheck information has been configured in the *consulmasterscript.sh* and *consulslavescript.sh*. This healthcheck gives the        information about Redis service running on port 6379. If the service is on, consul shows **service sync** successful.
    
-   The information can be gathered by running the following command on any node (Master or Slave):
+   The healthcheck was setup in the JSON file using the following entries
+```json
+"service": {
+	"name": "redis6379",
+	"tags": ["master"],
+	"port": 6379,
+	"check": {
+		"args": ["nc", "-zv", "127.0.0.1", "6379"],
+		"interval": "5s"
+	}
+}
+```
+
+The information can be gathered by running the following command on any node (Master or Slave):
 ```
 consul monitor
 ```
@@ -99,7 +112,7 @@ redis_sentinel_monitors:
 ```
 ## Architecture Diagram
 
-![alt text](https://github.com/grv231/Vagrant-RedisSentinel-Consul-Clustering/blob/master/Images/RedisConsulTest.png "RedisConsulSmokeTest")
+![alt text](https://github.com/grv231/Vagrant-RedisSentinel-Consul-Clustering/blob/master/Images/Arch_RedisConsul.jpg "Design")
 
 ## Built With
 
